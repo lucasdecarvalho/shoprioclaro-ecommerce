@@ -11,16 +11,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Iluminatta') }}</title>
+    <title>{{ config('app.name', 'Shop Rio Claro') }}</title>
 
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600&Libre+Baskerville:wght@700&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
+        a,p,span,small,h2,h3,h4,h5,h6,li {
+            font-family: 'Open Sans', cursive;
+        }
         a {
             text-decoration: none !important;
         }
@@ -33,11 +34,8 @@
             background:#f90;
         }
         h1 {
-            font-family: 'Amita', cursive;
-            font-size:32px;
-            color:#fff;
-            line-height:0;
-            margin-top:.8em;
+            font-family: 'Anton', cursive;
+            font-size:42px;
         }
         .slide {
             overflow:hidden;
@@ -51,58 +49,56 @@
         input[type="number"] {
             -moz-appearance: textfield;
         }
+        li#menu:hover {
+            background:#f60;
+        }
     </style>
 </head>
-<body style="">
+<body>
     <div class="flex-center bg-white">
-        <!-- top warning -->
-        <!-- removed -->
-        <!-- header -->
-        <!-- top menu contact, cart -->
+
         <header class="col-12 p-0 m-0">
-            <nav class="navbar navbar-dark d-none d-xl-block" style="background:#2c1b47;border-bottom: solid 1px rgba(157, 111, 174, .3);">
-                <div class="row">
-                    <ul class="navbar mr-auto p-0 m-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="#">WhatsApp: (19) 1234-5678</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar p-0 m-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="/client">@if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="{{ route('cart.index') }}">Carrinho</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Menu logo search -->
-            <nav class="navbar navbar-light d-none d-xl-block" style="background:#2c1b47">
-                <div class="row">
-                    <div class="col-4 d-none d-xl-block">
-                        <!--  -->
+
+            <nav class="navbar">
+                <div class="container">
+                    <div class="col-4">
+                        <a href="/">
+                            <h1 class="text-primary">Sua marca</h1>
+                        </a>
                     </div>
-                    <div class="col-12 col-xl-4 text-center">
-                        <a href="/"><h1>Iluminatta</h1><i class="fas fa-seedling" style="position:absolute;margin-left:-0em;margin-top:-2em;font-size:1.2em;color:#ff7700;"></i></a>
-                    </div>
-                    <div class="col-4 d-none d-xl-block">
+                    <div class="col-4">
                         <form class="form-inline" action="{{ route('search.word') }}" method="GET">
-                            <input type="search" name="keyword" class="form-control mr-2 w-75" placeholder="Buscar por produtos na loja" value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search">
-                            <button class="btn btn-outline-light" type="submit">Buscar</button>
+                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos na loja" value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search">
+                            <button class="btn btn-outline-primary ml-1 w-auto" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
+                    <div class="col-4">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="{{ route('client.index') }}">
+                                    <i style="font-size:18px;" class="fas fa-user text-dark mr-1"></i>
+                                    @if (Auth::check()) {{ "Olá, ". Auth::user()->name ." ". Auth::user()->lastname }}. @else Login / Registro @endif
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="position:absolute;right:0;" class="nav-link text-dark" href="{{ route('cart.index') }}">
+                                    <i style="font-size:34px;line-height:1em;" class="fas fa-shopping-cart mr-2 text-dark"></i>
+                                    <span style="position:absolute;top:.2em;right:.5em;" class="rounded-circle pr-2 pl-2 bg-danger text-white">{{ Cart::count() }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
+
+
+
             <!-- top menu -->
-            <nav class="navbar navbar-expand-xl navbar-dark" style="background:#2c1b47">
+            <nav class="navbar navbar-expand-xl navbar-dark bg-dark p-0">
                 <!-- responsivo -->
                 <div class="col-12 d-block d-xl-none">
                     <div class="row">
-                        <div class="col-9">
-                            <a href="/"><h1>Iluminatta</h1><i class="fas fa-seedling" style="position:absolute;margin-left:4.45em;margin-top:-1.9em;font-size:1.2em;color:#ff7700;"></i></a>
-                        </div>
-                        <div class="col-3">
+                        <div class="col-12 text-right">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -111,9 +107,9 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <div class="col-12 p-2 mt-3 mb-2 rounded d-xl-none bg-dark">
+                        <div class="col-12 rounded d-xl-none">
 
-                            <li class="nav-item  border-bottom p-2">
+                            <li class="nav-item  border-bottom p-2 m-0">
                                 <a class="nav-link text-light" href="/client"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
                             </li>
                             <li class="nav-item p-2">
@@ -122,8 +118,8 @@
                             
                         </div>
                         @foreach($categories as $catg)
-                        <li>
-                            <a class="nav-item nav-link text-light" href="{{ route('shop.index',$catg->path ?? null) }}">{{ $catg->title ?? null }}</a>
+                        <li id="menu" class="p-2 m-0">
+                            <a class="nav-item nav-link text-white text-uppercase" href="{{ route('shop.index',$catg->path ?? null) }}">{{ $catg->title }}</a>
                         </li>
                         @endforeach
                     </ul>
