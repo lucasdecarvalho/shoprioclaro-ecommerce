@@ -18,6 +18,23 @@
                </div>
             @endif
          @endforeach
+         <ol class="carousel-indicators">
+
+            @foreach ($banners as $banner)
+
+
+               @if ($banner->place == 1 && $banner->path == $fbt->path)
+                  <?php $i = 0; ?>
+                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ $i++ }}"></li>
+               @endif
+               @if ($banner->place == 1 && $banner->path !== $fbt->path)
+                  <?php $i = 1; ?>
+                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ $i++ }}"></li>
+               @endif
+            
+            @endforeach
+
+         </ol>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -36,7 +53,7 @@
          <h2 class="w-100 m-2 text-center">DESTAQUES</h2>
 
          @foreach ($pr as $product)
-         <div class="col-12 col-xl-3">
+         <div class="col-12 col-xl-3 p-0">
             <div class="card text-center">
                <a href="{{ route('shop.show',[$product->category,$product->id]) }}">
                <img class="card-img-top" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($product->image1 ?? 'images/no-image.png') }}" alt="{{ $product->name ?? null }}">
@@ -51,7 +68,6 @@
          @endforeach
 
       </div>
-   </div>
    <!-- Content end -->
    <!-- Slider -->
    @if(!!$fbb)
@@ -73,49 +89,55 @@
          @endforeach
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
       </a>
    </div>
    @endif
    <!-- Slide end -->
    <!-- Content -->
+   </div>
+
    <div class="container">
-      <div class="card-deck mt-4 mb-4">
-         <div class="card border-0">
+      <div class="card-deck mt-2 mb-4">
+
+         <div class="card border-0 p-0">
             <a href="details">
-            <img class="rounded-circle w-100" src="https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-us-Library/default/dwc92530df/loyalty/loyalty-homepage-slot.jpg?sw=340&sh=340&sm=fit&q=70" alt="Card image cap">
+            <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
             </a>
             <div class="card-body">
-               <!-- <h5 class="card-title">Card title</h5> -->
-               <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-               <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TORNE-SE UM MEMBRO</button> -->
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Cadastre-se</button>
             </div>
          </div>
-         <div class="card border-0">
+
+         <div class="card border-0 p-0">
             <a href="details">
-            <img class="rounded-circle w-100" src="https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-us-Library/default/dwc96c0716/images/homepage/G2/UDAllAccess_G123_110515.jpg?sw=340&sh=340&sm=fit&q=70" alt="Card image cap">
+            <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
             </a>
             <div class="card-body">
-               <!-- <h5 class="card-title">Card title</h5> -->
-               <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-               <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">CONFIRA</button> -->
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Saiba mais</button>
             </div>
          </div>
-         <div class="card border-0">
+
+         <div class="card border-0 p-0">
             <a href="details">
-            <img class="card-img-top" src="https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-us-Library/default/dw55235f2f/images/homepage/G3/UVEdge_G3_030815.jpg?sw=340&sh=340&sm=fit&q=70" alt="Card image cap">
+            <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
             </a>
-            <div class="card-body">
-               <!-- <h5 class="card-title">Card title</h5> -->
-               <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-               <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SAIBA MAIS</button> -->
+            <div class="d-hover card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">SAIBA MAIS</button>
             </div>
          </div>
+
       </div>
    </div>
    <!-- Content end -->

@@ -14,7 +14,7 @@
     <title>{{ config('app.name', 'Shop Rio Claro') }}</title>
 
     <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
@@ -131,7 +131,7 @@
         @yield('content')
         
         <!-- Footer -->
-        <div class="footer-head bg-dark text-light">
+        <div class="footer-head bg-secondary text-light">
             <div class="col-12">
                 <div class="container pt-4 pb-4">
                     <div class="row">
@@ -140,8 +140,8 @@
                                 <form class="form-inline mb-3 w-100 w-xl-75" action="{{ route('newsletter.store') }}" method="POST">
                                     @csrf
                                     <div class="form-row">
-                                        <input class="form-control mr-0 mr-xl-1 mt-0" type="text" name="name" placeholder="Digite seu Nome" required>
-                                        <input class="form-control mr-0 mr-xl-1 mt-2 mt-xl-0" type="text" name="email" placeholder="Digite seu E-mail" required>
+                                        <input class="form-control mr-0 mr-xl-1 mt-0 border-light" type="text" name="name" placeholder="Digite seu Nome" required>
+                                        <input class="form-control mr-0 mr-xl-1 mt-0 mt-xl-0 border-light" type="text" name="email" placeholder="Digite seu E-mail" required>
                                         <button class="btn btn-outline-light mt-2 mt-xl-0" type="submit">Assinar</button>
                                     </div>
                                 </form>
@@ -150,50 +150,77 @@
                                 <span>Inscreva-se em nossa newsletter e receba mensagens periodicamente sobre promoções, novidades e destaques de nossa loja.</span>
                             </div>
                         </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="row">
-                                <ul class="mt-3" style="font-size:2rem;">
-                                    <li class="float-left m-2"><a class="text-light" href="https://www.facebook.com/Iluminatta-654918827851954/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                                    <li class="float-left m-2"><a class="text-light" href="https://www.instagram.com/iluminattastore/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    <!-- <li class="float-left m-2"><a class="text-light" href="http://" target="_blank"><i class="fab fa-twitter-square"></i></a></li> -->
-                                    <!-- <li class="float-left m-2"><a class="text-light" href="http://" target="_blank"><i class="fab fa-youtube"></i></a></li> -->
-                                </ul>
-                            </div>
+                        <div class="col-12 col-xl-4">
+                            <ul class="navbar nav mt-3">
+                                <li class="nav-item m-2">
+                                    <a class="text-secondary text-light" href="https://www.instagram.com/" target="_blank">
+                                        <i style="font-size:2em;" class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item m-2">
+                                    <a class="text-secondary text-light" href="https://www.facebook.com/" target="_blank">
+                                        <i style="font-size:2em;" class="fab fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item m-2">
+                                    <a class="text-secondary text-light" href="https://www.twitter.com/" target="_blank">
+                                        <i style="font-size:2em;" class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item m-2">
+                                    <a class="text-secondary text-light" href="https://www.youtube.com/" target="_blank">
+                                        <i style="font-size:2em;" class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="text-light" style="background:#2c1b47;">
+        <footer class="bg-dark text-light">
             <div class="col-12">
                 <div class="container pt-4 pb-4">
                     <div class="row">
                         <div class="col-12 col-xl-8">
                             <div class="row">
-                                <h4>Sobre</h4>
-                                <p>Somos uma loja de produtos importados, com ótimo estoque e custo benefício. Navegue por nossas páginas e encontre os produtos que mais tem a ver com o seu estilo. Temos diversas formas de pagamento e facilidades.</p>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante, ac condimentum metus eros ac risus. In ac ornare dolor. Nam accumsan semper consequat.</p>
                             </div>
                         </div>
                         <div class="col-12 col-xl-4">
-                            <div class="row">
+                            <div class="nav navbar">
                                 <ul class="col-12 col-xl-6">
-                                    <li><a class="text-light" href="http://">Contato</a></li>
-                                    <li><a class="text-light" href="http://">FAQ</a></li>
-                                    <li><a class="text-light" href="http://">Meus Pedidos</a></li>
-                                    <li><a class="text-light" href="http://">Política de retorno</a></li>
+                                    <li>
+                                        <a class="text-light" href="">Contato</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light" href="">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light" href="">Meus Pedidos</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light" href="">Política de retorno</a>
+                                    </li>
                                 </ul>
                                 <ul class="col-12 col-xl-6">
-                                    <li><a class="text-light" href="http://">Informações de compra</a></li>
-                                    <li><a class="text-light" href="http://">Privacidade</a></li>
-                                    <li><a class="text-light" href="http://">Termos de uso</a></li>
-                                    <li><a class="text-light" href="http://">Permissão de uso</a></li>
+                                    <li>
+                                        <a class="text-light" href="">Informações de compra</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light" href="">Privacidade</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-light" href="">Termos de uso</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 pt-4 text-center" style="border-top: solid 1px rgba(157, 111, 174, .3);">
-                            <p class="p-0 m-0">© 2020 Iluminatta. Todos os direitos reservados.</p>
+                        <div class="col-12 pt-4 text-center" style="border-top: solid 1px rgba(3, 3, 3, .3);">
+                            <p class="p-0 m-0">© 2020 Shop Rio Claro. Todos os direitos reservados.</p>
                         </div>
                     </div>
                 </div>
@@ -216,6 +243,10 @@
             $('.ccnumber').mask('0000 0000 0000 0000');
             // $('.mixed').mask('AAA 000-S0S');
             // $('.money').mask('000.000.000.000.000,00', {reverse: true});
+
+            $('.carousel').carousel({
+              interval: 200
+            })
         });
     </script>
 </body>
