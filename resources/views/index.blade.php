@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+   <?php $i = 1; ?>
    <!-- Slider -->
    @if(!!$fbt)
    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
@@ -24,12 +25,10 @@
 
 
                @if ($banner->place == 1 && $banner->path == $fbt->path)
-                  <?php $i = 0; ?>
-                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ $i++ }}"></li>
+                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
                @endif
                @if ($banner->place == 1 && $banner->path !== $fbt->path)
-                  <?php $i = 1; ?>
-                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ $i++ }}"></li>
+                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
                @endif
             
             @endforeach
@@ -87,6 +86,20 @@
                </div>
             @endif
          @endforeach
+         <ol class="carousel-indicators">
+
+            @foreach ($banners as $banner)
+               @if ($banner->place == 2 && $banner->path == $fbb->path)
+                  <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
+               @endif
+               @if ($banner->place == 2 && $banner->path !== $fbb->path)
+                   
+                  <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
+               @endif
+            
+            @endforeach
+
+         </ol>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>

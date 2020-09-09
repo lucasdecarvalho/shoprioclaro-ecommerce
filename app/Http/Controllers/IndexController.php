@@ -17,8 +17,8 @@ class IndexController extends Controller
      */
     public function index()
     {       
-        $fbt = Banner::where('place',1)->latest()->first() ?? null;
-        $fbb = Banner::where('place',2)->latest()->first() ?? null;
+        $fbt = Banner::where('place',1)->latest()->first();
+        $fbb = Banner::where('place',2)->latest()->first();
         $banners = Banner::all();
 
         $pr = Product::offset(0)->limit(8)->orderBy('id','DESC')->where('status',true)->get();
