@@ -14,7 +14,7 @@
     <title>{{ config('app.name', 'Shop Rio Claro') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
@@ -68,18 +68,18 @@
 
             <nav class="navbar">
                 <div class="container">
-                    <div class="col-4">
+                    <div class="col-12 col-md-4 text-center text-md-left">
                         <a href="/">
-                            <h1 class="text-primary">Sua marca</h1>
+                            <h1 class="text-primary">Sua Marca</h1>
                         </a>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         <form class="form-inline" action="{{ route('search.word') }}" method="GET">
-                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos na loja" value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search">
+                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search">
                             <button class="btn btn-outline-primary ml-1 w-auto" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4 d-none d-md-block">
                         <ul class="nav">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="{{ route('client.index') }}">
@@ -101,9 +101,9 @@
 
 
             <!-- top menu -->
-            <nav class="navbar navbar-expand-xl navbar-dark bg-dark p-0">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark pt-2 pb-2 p-md-0">
                 <!-- responsivo -->
-                <div class="col-12 d-block d-xl-none">
+                <div class="col-12 d-block d-md-none">
                     <div class="row">
                         <div class="col-12 text-right">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <div class="col-12 rounded d-xl-none">
+                        <div class="col-12 rounded d-md-none">
 
                             <li class="nav-item  border-bottom p-2 m-0">
                                 <a class="nav-link text-light" href="/client"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
@@ -142,14 +142,14 @@
             <div class="col-12">
                 <div class="container pt-4 pb-4">
                     <div class="row">
-                        <div class="col-12 col-xl-6">
+                        <div class="col-12 col-md-6">
                             <div class="row">
-                                <form class="form-inline mb-3 w-100 w-xl-75" action="{{ route('newsletter.store') }}" method="POST">
+                                <form class="form-inline mb-3 w-100 w-md-75" action="{{ route('newsletter.store') }}" method="POST">
                                     @csrf
                                     <div class="form-row">
-                                        <input class="form-control mr-0 mr-xl-1 mt-0 border-light" type="text" name="name" placeholder="Digite seu Nome" required>
-                                        <input class="form-control mr-0 mr-xl-1 mt-0 mt-xl-0 border-light" type="text" name="email" placeholder="Digite seu E-mail" required>
-                                        <button class="btn btn-outline-light mt-2 mt-xl-0" type="submit">Assinar</button>
+                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="name" placeholder="Digite seu Nome" required>
+                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="email" placeholder="Digite seu E-mail" required>
+                                        <button class="btn btn-outline-light mt-1" type="submit">Assinar</button>
                                     </div>
                                 </form>
                             </div>
@@ -157,7 +157,7 @@
                                 <span>Inscreva-se em nossa newsletter e receba mensagens periodicamente sobre promoções, novidades e destaques de nossa loja.</span>
                             </div>
                         </div>
-                        <div class="col-12 col-xl-4">
+                        <div class="col-12 col-md-4">
                             <ul class="navbar nav mt-3">
                                 <li class="nav-item m-2">
                                     <a class="text-secondary text-light" href="https://www.instagram.com/" target="_blank">
@@ -189,15 +189,15 @@
             <div class="col-12">
                 <div class="container pt-4 pb-4">
                     <div class="row">
-                        <div class="col-12 col-xl-8">
+                        <div class="col-12 col-md-8">
                             <div class="row">
                                 <h4>Lorem Ipsum</h4>
                                 <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante, ac condimentum metus eros ac risus. In ac ornare dolor. Nam accumsan semper consequat.</p>
                             </div>
                         </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="nav navbar">
-                                <ul class="col-12 col-xl-6">
+                        <div class="col-12 col-md-4">
+                            <div class="nav navbar p-0 m-0">
+                                <ul class="col-12 col-md-6 p-0">
                                     <li>
                                         <a class="text-light" href="">Contato</a>
                                     </li>
@@ -211,7 +211,7 @@
                                         <a class="text-light" href="">Política de retorno</a>
                                     </li>
                                 </ul>
-                                <ul class="col-12 col-xl-6">
+                                <ul class="col-12 col-md-6 p-0">
                                     <li>
                                         <a class="text-light" href="">Informações de compra</a>
                                     </li>
@@ -248,12 +248,6 @@
             $('.exp').mask('00/0000');
             $('.cvv').mask('000');
             $('.ccnumber').mask('0000 0000 0000 0000');
-            // $('.mixed').mask('AAA 000-S0S');
-            // $('.money').mask('000.000.000.000.000,00', {reverse: true});
-
-            $('.carousel').carousel({
-              interval: 200
-            })
         });
     </script>
 </body>

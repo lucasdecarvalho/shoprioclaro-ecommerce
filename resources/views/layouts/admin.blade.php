@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Iluminatta - Dashboard</title>
+  <title>Sua Marca - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <!-- Styles -->
@@ -29,14 +29,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/products">
         <div class="sidebar-brand-icon rotate-n-15">
           <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
-        <div class="sidebar-brand-text mx-3">Iluminatta <sup>2.0</sup></div>
+        <div class="sidebar-brand-text mx-3">Sua Marca <sup>2.0</sup></div>
       </a>
 
       <!-- Divider -->

@@ -52,7 +52,7 @@
          <h2 class="w-100 m-2 text-center">DESTAQUES</h2>
 
          @foreach ($pr as $product)
-         <div class="col-12 col-xl-3 m-0 p-0 rounded-0 mx-0">
+         <div class="col-12 col-md-3 m-0 p-0 rounded-0 mx-0">
             <div class="card text-center bg-white p-0 rounded-0">
                <a href="{{ route('shop.show',[$product->category,$product->id]) }}">
                   <img class="card-img-top p-2 bg-white" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($product->image1 ?? 'images/no-image.png') }}" alt="{{ $product->name ?? null }}">
@@ -119,6 +119,7 @@
    <div class="container">
       <div class="card-deck mt-2 mb-4">
 
+      <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
          <div class="card border-0 p-0">
             <a href="details">
             <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
@@ -129,7 +130,9 @@
                <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Cadastre-se</button>
             </div>
          </div>
+         </div>
 
+         <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
          <div class="card border-0 p-0">
             <a href="details">
             <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
@@ -140,7 +143,9 @@
                <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Saiba mais</button>
             </div>
          </div>
+         </div>
 
+         <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
          <div class="card border-0 p-0">
             <a href="details">
             <img class="card-img-top" src="http://127.0.0.1:8000/images/202009082036071.jpg" alt="Card image cap">
@@ -150,6 +155,7 @@
                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">SAIBA MAIS</button>
             </div>
+         </div>
          </div>
 
       </div>
