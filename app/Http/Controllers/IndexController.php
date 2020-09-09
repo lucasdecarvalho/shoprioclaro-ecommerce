@@ -16,13 +16,18 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {       
+    {           
+        return view('index');
+    }
+
+   public function example()
+    {
         $fbt = Banner::where('place',1)->latest()->first();
         $fbb = Banner::where('place',2)->latest()->first();
         $banners = Banner::all();
 
         $pr = Product::offset(0)->limit(8)->orderBy('id','DESC')->where('status',true)->get();
-        
+
         foreach ($pr as $p) {
 
             $ca = Category::where('id', $p->category)->get();
@@ -33,8 +38,8 @@ class IndexController extends Controller
             }
 
         }
-        
-        return view('index',compact('fbt','fbb','banners','pr'));
+
+        return view('example',compact('fbt','fbb','banners','pr'));
     }
 
     public function word(Request $request)
