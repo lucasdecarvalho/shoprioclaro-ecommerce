@@ -19,7 +19,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        a,p,span,small,h2,h3,h4,h5,h6,li {
+        a,p,span,small,h2,h3,h5,h6,li {
             font-family: 'Open Sans', cursive;
         }
         a {
@@ -36,6 +36,13 @@
         h1 {
             font-family: 'Anton', cursive;
             font-size:42px;
+        }
+        h5 {
+            font-size:16px;
+        }
+        h4 {
+            font-family: 'Anton', cursive;
+            font-size:22px;
         }
         .slide {
             overflow:hidden;
@@ -54,7 +61,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-dark">
     <div class="flex-center bg-white">
 
         <header class="col-12 p-0 m-0">
@@ -185,7 +192,7 @@
                         <div class="col-12 col-xl-8">
                             <div class="row">
                                 <h4>Lorem Ipsum</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante, ac condimentum metus eros ac risus. In ac ornare dolor. Nam accumsan semper consequat.</p>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante, ac condimentum metus eros ac risus. In ac ornare dolor. Nam accumsan semper consequat.</p>
                             </div>
                         </div>
                         <div class="col-12 col-xl-4">

@@ -23,7 +23,6 @@
 
             @foreach ($banners as $banner)
 
-
                @if ($banner->place == 1 && $banner->path == $fbt->path)
                   <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
                @endif
@@ -45,74 +44,76 @@
       </a>
    </div>
    @endif
-   <!-- Slide end -->
-   <!-- Content -->
+   <!-- Slider end -->
+   <!-- Container -->
    <div class="container">
+
       <div class="card-deck mt-4 mb-4">
          <h2 class="w-100 m-2 text-center">DESTAQUES</h2>
 
          @foreach ($pr as $product)
-         <div class="col-12 col-xl-3 p-0">
-            <div class="card text-center">
+         <div class="col-12 col-xl-3 m-0 p-0 rounded-0 mx-0">
+            <div class="card text-center bg-white p-0 rounded-0">
                <a href="{{ route('shop.show',[$product->category,$product->id]) }}">
-               <img class="card-img-top" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($product->image1 ?? 'images/no-image.png') }}" alt="{{ $product->name ?? null }}">
+                  <img class="card-img-top p-2 bg-white" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($product->image1 ?? 'images/no-image.png') }}" alt="{{ $product->name ?? null }}">
                </a>
-               <div class="card-body" style="height:140px;">
-                  <h5 class="card-title">{{ $product->name ?? null }}</h5>
-                  <!-- <p class="card-text">{{ $product->details ?? null }}</p> -->
-                  <p class="card-text">R$ {{ number_format($product->price,2,",",".") }}</p>
+               <div class="card-body bg-white" style="height:85px;">
+                  <h5 class="card-title font-weight-bold">{{ $product->name ?? null }}</h5>
+               </div>
+               <div class="card-footer text-dark border-top-0">
+                  <!-- <small>De: R$ 1.290,90</small> -->
+                  <h4 class="card-text">R$ {{ number_format($product->price,2,",",".") }}</h4>
                </div>
             </div>
          </div>
          @endforeach
 
       </div>
-   <!-- Content end -->
-   <!-- Slider -->
-   @if(!!$fbb)
-   <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-         <div class="carousel-item active">
-            @if(!empty($fbb->target)) <a href="{{ $fbb->target }}"> @endif
-               <img class="d-block w-100" src="{{ asset($fbb->path) }}" alt="{{ $fbb->title }}">
-               @if(!empty($fbb->target)) </a> @endif
-         </div>
-         @foreach ($banners as $banner)
-            @if ($banner->place == 2 && $banner->path !== $fbb->path)
-               <div class="carousel-item">
-                     @if(!empty($banner->target)) <a href="{{ $banner->target }}"> @endif
-                     <img class="d-block w-100" src="{{ asset($banner->path) }}" alt="{{ $banner->title }}">
-                     @if(!empty($banner->target)) </a> @endif
-               </div>
-            @endif
-         @endforeach
-         <ol class="carousel-indicators">
-
+      <!-- Slider -->
+      @if(!!$fbb)
+      <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               @if(!empty($fbb->target)) <a href="{{ $fbb->target }}"> @endif
+                  <img class="d-block w-100" src="{{ asset($fbb->path) }}" alt="{{ $fbb->title }}">
+                  @if(!empty($fbb->target)) </a> @endif
+            </div>
             @foreach ($banners as $banner)
-               @if ($banner->place == 2 && $banner->path == $fbb->path)
-                  <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
-               @endif
                @if ($banner->place == 2 && $banner->path !== $fbb->path)
-                   
-                  <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
+                  <div class="carousel-item">
+                        @if(!empty($banner->target)) <a href="{{ $banner->target }}"> @endif
+                        <img class="d-block w-100" src="{{ asset($banner->path) }}" alt="{{ $banner->title }}">
+                        @if(!empty($banner->target)) </a> @endif
+                  </div>
                @endif
-            
             @endforeach
+            <ol class="carousel-indicators">
 
-         </ol>
+               @foreach ($banners as $banner)
+                  @if ($banner->place == 2 && $banner->path == $fbb->path)
+                     <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
+                  @endif
+                  @if ($banner->place == 2 && $banner->path !== $fbb->path)
+                     
+                     <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
+                  @endif
+               
+               @endforeach
+
+            </ol>
+         </div>
+         <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+         </a>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-      </a>
-   </div>
-   @endif
-   <!-- Slide end -->
-   <!-- Content -->
+      @endif
+      <!-- Slider end -->
+   <!-- Container -->
    </div>
 
    <div class="container">
