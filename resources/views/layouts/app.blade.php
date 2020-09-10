@@ -69,7 +69,7 @@
             <nav class="navbar">
                 <div class="container">
                     <div class="col-12 col-md-4 text-center text-md-left">
-                        <a href="/">
+                        <a href="{{ route('index') }}">
                             <h1 class="text-primary">Sua Marca</h1>
                         </a>
                     </div>

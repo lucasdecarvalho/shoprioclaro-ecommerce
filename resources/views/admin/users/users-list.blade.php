@@ -36,7 +36,7 @@
                 <td>{{ $user->email ?? null }}</td>
                 <td>
                     <a class="btn btn-info" href="{{ route('users.show',$user->id) }}" data-toggle="tooltip" data-placement="top" title="Detalhes"><i class="fas fa-search-plus"></i></a>
-                    <!-- <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>    -->
+                    <!-- <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a> -->
                 </td>
             </tr>
             @endforeach

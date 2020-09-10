@@ -7,7 +7,7 @@
                 <h6 class="text-uppercase text-center text-xl-left font-weight-bold pt-2">Banners</h6>
             </div>
             <div class="col-12 col-xl-6 p-2 pt-xl-4 pr-xl-4 text-center text-xl-right">
-                <a href="/admin/banners/create" class="btn btn-success">Adicionar <i class="fas fa-plus-circle"></i></a>
+                <a href="/exemplo/admin/banners/create" class="btn btn-success">Adicionar <i class="fas fa-plus-circle"></i></a>
             </div>
         </div>
     </div>

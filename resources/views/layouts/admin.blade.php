@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/products">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('exemplo','admin') }}">
         <div class="sidebar-brand-icon rotate-n-15">
           <!-- <i class="fas fa-laugh-wink"></i> -->
         </div>
@@ -66,8 +66,8 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma Ação:</h6>
-            <a class="collapse-item" href="/admin/sales">Relatório de Vendas</a>
-            <a class="collapse-item" href="/admin/users">Cadastro de Usuários</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/sales') }}">Relatório de Vendas</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/users') }}">Cadastro de Usuários</a>
           </div>
         </div>
       </li>
@@ -82,14 +82,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/coupons">
+        <a class="nav-link" href="{{ url('exemplo/admin/coupons') }}">
           <i class="fas fa-ticket-alt"></i>
           <span>Cupons de Desconto</span></a>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/newsletter">
+        <a class="nav-link" href="{{ url('exemplo/admin/newsletter') }}">
           <i class="far fa-envelope"></i>
           <span>Cadastro de Newsletter</span></a>
       </li>
@@ -103,8 +103,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma Ação:</h6>
-            <a class="collapse-item" href="/admin/banners">Listar Banners</a>
-            <a class="collapse-item" href="/admin/banners/create">Adicionar Banner</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/banners') }}">Listar Banners</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/banners/create') }}">Adicionar Banner</a>
           </div>
         </div>
       </li>
@@ -141,8 +141,8 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma Ação:</h6>
-            <a class="collapse-item" href="/admin/categories">Listar Categorias</a>
-            <a class="collapse-item" href="/admin/categories/create">Adicionar Categorias</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/categories') }}">Listar Categorias</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/categories/create') }}">Adicionar Categorias</a>
           </div>
         </div>
       </li>
@@ -156,8 +156,8 @@
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma Ação:</h6>
-            <a class="collapse-item" href="/admin/products">Listar Produtos</a>
-            <a class="collapse-item" href="/admin/products/create">Adicionar Produto</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/products') }}">Listar Produtos</a>
+            <a class="collapse-item" href="{{ url('exemplo/admin/products/create') }}">Adicionar Produto</a>
           </div>
         </div>
       </li>
@@ -179,17 +179,17 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
             <h6 class="collapse-header">Estrutura:</h6>
-            <a class="collapse-item" href="/" target="_blank">Home</a>
-            <a class="collapse-item" href="/shop" target="_blank">Produtos</a>
-            <a class="collapse-item" href="/cart" target="_blank">Carrinho</a>
-            <a class="collapse-item" href="/checkout" target="_blank">Checkout</a>
+            <a class="collapse-item" href="/exemplo" target="_blank">Home</a>
+            <a class="collapse-item" href="/exemplo" target="_blank">Produtos</a>
+            <a class="collapse-item" href="/exemplo/cart" target="_blank">Carrinho</a>
+            <a class="collapse-item" href="/exemplo/checkout" target="_blank">Checkout</a>
             
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Telas de Login:</h6>
-            <a class="collapse-item" href="/login" target="_blank">Registro</a>
-            <a class="collapse-item" href="/login" target="_blank">Login</a>
-            <a class="collapse-item" href="/password/reset" target="_blank">Esqueci minha senha</a>
-            <a class="collapse-item" href="/client" target="_blank">Meus Pedidos</a>
+            <a class="collapse-item" href="/exemplo/login" target="_blank">Registro</a>
+            <a class="collapse-item" href="/exemplo/login" target="_blank">Login</a>
+            <a class="collapse-item" href="/exemplo/password/reset" target="_blank">Esqueci minha senha</a>
+            <a class="collapse-item" href="/exemplo/client" target="_blank">Meus Pedidos</a>
             
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Outras Páginas:</h6>

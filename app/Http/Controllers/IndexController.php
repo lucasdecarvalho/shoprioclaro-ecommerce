@@ -17,11 +17,6 @@ class IndexController extends Controller
      */
     public function index()
     {           
-        return view('index');
-    }
-
-   public function example()
-    {
         $fbt = Banner::where('place',1)->latest()->first();
         $fbb = Banner::where('place',2)->latest()->first();
         $banners = Banner::all();
@@ -40,6 +35,11 @@ class IndexController extends Controller
         }
 
         return view('example',compact('fbt','fbb','banners','pr'));
+    }
+
+   public function example()
+    {
+        
     }
 
     public function word(Request $request)

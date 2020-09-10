@@ -13,56 +13,58 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Main
-Route::get('/', 'IndexController@index')->name('index');
-Route::get('/example', 'IndexController@example')->name('example');
-Route::get('/search', 'IndexController@word')->name('search.word');
+Route::group(['prefix' => 'exemplo'], function() {
 
-Route::get('/shop', 'IndexController@index')->name('index');
-Route::get('/shop/{slug}', 'ShopController@index')->name('shop.index');
-Route::get('/shop/{slug}/{productId}', 'ShopController@show')->name('shop.show');
+    // Main
+    Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/search', 'IndexController@word')->name('search.word');
 
-// Cart
-Route::get('/cart', 'CartController@index')->name('cart.index');
-Route::post('/cart', 'CartController@store')->name('cart.store');
-Route::put('/cart/{product}', 'CartController@update')->name('cart.update');
-Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+    Route::get('/shop', 'IndexController@index')->name('shop');
+    Route::get('/shop/{slug}', 'ShopController@index')->name('shop.index');
+    Route::get('/shop/{slug}/{productId}', 'ShopController@show')->name('shop.show');
 
-// Checkout
-Route::get('/checkout', 'CieloController@index')->name('checkout.index')->middleware('auth');
-Route::post('/checkout', 'CieloController@payer')->name('checkout.payer')->middleware('auth');
-Route::post('/checkout/coupons', 'CieloController@coupon')->name('checkout.coupon');
+    // Cart
+    Route::get('/cart', 'CartController@index')->name('cart.index');
+    Route::post('/cart', 'CartController@store')->name('cart.store');
+    Route::put('/cart/{product}', 'CartController@update')->name('cart.update');
+    Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 
-Route::get('send-mail', function () {
-   
-    $details = [
-        'title' => 'Olá, {{ $shop->name }}! Agradecemos por sua compra em nossa loja.',
-        'body' => 'Caso precise de alguma ajuda com o seu pedido, fale conosco através do WhatsApp® (19) 91234-5678.'
-    ];
-   
-    \Mail::to('lucasuix@gmail.com')->send(new \App\Mail\SoldMail($details));
-   
+    // Checkout
+    Route::get('/checkout', 'CieloController@index')->name('checkout.index')->middleware('auth');
+    Route::post('/checkout', 'CieloController@payer')->name('checkout.payer')->middleware('auth');
+    Route::post('/checkout/coupons', 'CieloController@coupon')->name('checkout.coupon');
+
+    Route::get('/success', function () {
+    
+        $details = [
+            'title' => 'Sua loja recebeu um novo pedido!',
+            'body'  => 'Bom trabalho! Sua loja recebeu um novo pedido. Para mais detalhes, acesse o seu painel de administrador e clique em Relatórios > Vendas e Pedidos. Faça o envio o quanto antes e não deixe de notificar o comprador.'
+        ];
+    
+        \Mail::to('lucasuix@gmail.com')->send(new \App\Mail\SoldMail($details));
+    
+    });
+
+    // Authentications
+    Auth::routes();
+
+    // Admin
+    Route::group(['prefix' => 'admin','middleware' => 'is_admin'], function() {
+
+        Route::get('/', 'ProductController@index');
+        Route::resource('products', 'ProductController');
+        Route::resource('sales', 'SoldController');
+        Route::resource('categories', 'CategoryController');
+        Route::resource('users', 'UserController');
+        Route::resource('newsletter', 'NewsletterController');
+        Route::resource('coupons', 'CouponController');
+        Route::resource('banners', 'BannerController');
+    });
+
+    // Client
+    Route::get('/client', 'HomeController@index')->name('client.index');
+    Route::put('/client', 'HomeController@update')->name('client.update');
+    Route::get('/home', 'HomeController@index')->name('client.index');
+    Route::get('/logout', 'Auth\LoginController@logout');
+
 });
-
-// Authentications
-Auth::routes();
-
-// Admin
-Route::group(['prefix' => 'admin','middleware' => 'is_admin'], function() {
-
-    Route::get('/', 'ProductController@index');
-    Route::resource('products', 'ProductController');
-    Route::resource('sales', 'SoldController');
-    Route::resource('categories', 'CategoryController');
-    Route::resource('users', 'UserController');
-    Route::resource('newsletter', 'NewsletterController');
-    Route::resource('coupons', 'CouponController');
-    Route::resource('banners', 'BannerController');
-});
-
-// Client
-Route::get('/client', 'HomeController@index')->name('client.index');
-Route::put('/client', 'HomeController@update')->name('client.update');
-Route::get('/home', 'HomeController@index')->name('client.index');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-

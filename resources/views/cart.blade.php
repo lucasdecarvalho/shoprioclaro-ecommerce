@@ -113,7 +113,7 @@
 
         <div class="row mt-4">
             <div class="col-6">
-                <a href="/shop" class="w-100 float-left"><i class="fas fa-undo-alt"></i> Voltar às compras</a>
+                <a href="{{ route('index') }}" class="w-100 float-left"><i class="fas fa-undo-alt"></i> Voltar às compras</a>
             </div>
             <div class="col-6 text-right">
                 @if (!!auth()->user())

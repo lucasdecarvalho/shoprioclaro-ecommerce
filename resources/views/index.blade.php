@@ -1,0 +1,1 @@
+<a style="width:100%;float:left;margin:2em auto 0 auto;text-align:center;" href="{{ route('example') }}">Exemplo de Loja</a>
