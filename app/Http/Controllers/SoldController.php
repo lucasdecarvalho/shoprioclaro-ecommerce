@@ -59,19 +59,14 @@ class SoldController extends Controller
      */
     public function show(Sold $sale)
     {
+        $shop = [];        
+        $saleN = Sold::where('id',$sale->id)->first();
 
-        $done = [];        
-        $saleN = Sold::all();
-
-        foreach ($saleN as $key => $shop)
-        {
-            $done[$key] = $shop;
-            $done[$key]['cart'] = unserialize($shop->cart);
-        }
+        $shop['cart'] = unserialize($saleN->cart);
 
         $user = auth()->user()->where('id',$sale->userId)->first();
 
-        return view('admin.sales.show',compact('sale','done','user'));
+        return view('admin.sales.show',compact('sale','shop','user'));
     }
 
     /**

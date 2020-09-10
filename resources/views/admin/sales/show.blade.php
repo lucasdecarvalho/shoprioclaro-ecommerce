@@ -98,11 +98,9 @@
 
 
                 <div class="col-12 pt-2 pb-2">
-                    <strong>Quantidade | Produto(s) | (ID):</strong>
-                    @foreach ($done as $item)
-                        @foreach ($item->cart as $prods)
-                            <p class="w-100 p-0 m-0 mt-2">{{ $prods }}</p>
-                        @endforeach
+                    <!-- <strong>Quantidade - Produto (ID):</strong> -->
+                    @foreach ($shop['cart'] as $item)
+                            <p class="w-100 p-0 m-0 mt-2">{{ $item }}</p>
                     @endforeach
                 </div>
 
