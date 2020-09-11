@@ -19,20 +19,22 @@
                </div>
             @endif
          @endforeach
-         <ol class="carousel-indicators">
-
-            @foreach ($banners as $banner)
-
-               @if ($banner->place == 1 && $banner->path == $fbt->path)
-                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
-               @endif
-               @if ($banner->place == 1 && $banner->path !== $fbt->path)
-                  <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
-               @endif
-            
-            @endforeach
-
-         </ol>
+         <div class="d-none d-sm-block">
+            <ol class="carousel-indicators">
+   
+               @foreach ($banners as $banner)
+   
+                  @if ($banner->place == 1 && $banner->path == $fbt->path)
+                     <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
+                  @endif
+                  @if ($banner->place == 1 && $banner->path !== $fbt->path)
+                     <li data-target="#carouselExampleControls1" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
+                  @endif
+               
+               @endforeach
+   
+            </ol>
+         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -87,20 +89,22 @@
                   </div>
                @endif
             @endforeach
-            <ol class="carousel-indicators">
+            <div class="d-none d-sm-block">
+               <ol class="carousel-indicators">
 
-               @foreach ($banners as $banner)
-                  @if ($banner->place == 2 && $banner->path == $fbb->path)
-                     <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
-                  @endif
-                  @if ($banner->place == 2 && $banner->path !== $fbb->path)
-                     
-                     <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
-                  @endif
-               
-               @endforeach
+                  @foreach ($banners as $banner)
+                     @if ($banner->place == 2 && $banner->path == $fbb->path)
+                        <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle active" data-slide-to="{{ ++$i }}"></li>
+                     @endif
+                     @if ($banner->place == 2 && $banner->path !== $fbb->path)
+                        
+                        <li data-target="#carouselExampleControls2" class="pt-2 pb-3 rounded-circle" data-slide-to="{{ ++$i }}"></li>
+                     @endif
+                  
+                  @endforeach
 
-            </ol>
+               </ol>
+            </div>
          </div>
          <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
