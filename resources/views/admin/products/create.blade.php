@@ -75,7 +75,7 @@
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="storage">Estoque:</label>
-                            <input type="number" maxlength="7" name="storage" class="form-control" id="storage" required>
+                            <input type="number" min="1" name="storage" class="form-control storage" id="storage" required>
                         </div>
                     </div>
 

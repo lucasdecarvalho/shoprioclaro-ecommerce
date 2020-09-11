@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-12 col-xl-6 pt-2 pb-2">
                     <strong>Valor Total:</strong>
-                    R$ <span class="money">{{ $sale->value }}</span>
+                    R$ <span class="totalsale">{{ $sale->value }}</span>
                 </div>
                 <div class="col-12 col-xl-6 pt-2 pb-2">
                     <strong>Tipo de Pagamento:</strong>

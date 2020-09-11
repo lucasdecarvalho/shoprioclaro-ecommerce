@@ -513,6 +513,8 @@
             $('.cvv').mask('000');
             $('.ccnumber').mask('0000 0000 0000 0000');
             $('.money').mask('000.000,00', {reverse: true});
+            $('.totalsale').mask('000.000.000.000,00', {reverse: true});
+            $('.storage').mask('0000');
             // $('.mixed').mask('AAA 000-S0S');
         });
     </script>
