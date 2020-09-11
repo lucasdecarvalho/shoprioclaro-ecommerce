@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <form class="form-inline" action="{{ route('search.word') }}" method="GET">
-                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search">
+                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search" required>
                             <button class="btn btn-outline-primary ml-1 w-auto" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
