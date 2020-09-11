@@ -41,7 +41,7 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         $data = [
-            'cod'  => $request->cod,
+            'cod'  => strtoupper($request->cod),
             'discount' => $request->discount,
             'status' => 1,
         ];

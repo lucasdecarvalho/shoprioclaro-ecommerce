@@ -31,7 +31,7 @@
                     <div class="form-row">
                         <div class="form-group col-12 col-xl-6">
                             <label for="cod">Código:</label>
-                            <input type="text" name="cod" class="form-control" maxlength="8" id="cod" required>
+                            <input type="text" name="cod" class="form-control text-uppercase" maxlength="8" id="cod" required>
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="discount">Desconto (%):</label>

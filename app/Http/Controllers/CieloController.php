@@ -54,6 +54,8 @@ class CieloController extends CartController
         $data = CartController::index();
         $shopc = new Coupon;
 
+        $request->cod = strtoupper($request->cod);
+
         if($coupon = Coupon::all()->where('cod',$request->cod)->first())
         {
     
