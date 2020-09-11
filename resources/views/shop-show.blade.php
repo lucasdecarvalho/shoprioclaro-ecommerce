@@ -46,15 +46,17 @@
          <h2 class="w-100 m-0 text-center">Produtos Relacionados</h2>
 
          @foreach ($related as $prod)
-         <div class="col-12 col-xl-3">
-            <div class="card text-center">
+         <div class="col-12 col-md-3 m-0 p-0 rounded-0 mx-0">
+            <div class="card text-center bg-white p-0 rounded-0">
                <a href="{{ route('shop.show',[$prod->category,$prod->id]) }}">
-               <img class="card-img-top" style="width:auto;height:140px;margin: 0 auto;" src="{{ asset($prod->image1 ?? 'images/no-image.png') }}" alt="{{ $prod->name ?? null }}">
+                  <img class="card-img-top p-2 bg-white" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($prod->image1 ?? 'images/no-image.png') }}" alt="{{ $prod->name ?? null }}">
                </a>
-               <div class="card-body" style="height:140px;">
-                  <h5 class="card-title">{{ $prod->name ?? null }}</h5>
-                  <!-- <p class="card-text">{{ $prod->details ?? null }}</p> -->
-                  <p class="card-text">R$ {{ number_format($product->price,2,",",".") }}</p>
+               <div class="card-body bg-white" style="height:85px;">
+                  <h5 class="card-title font-weight-bold">{{ $prod->name ?? null }}</h5>
+               </div>
+               <div class="card-footer text-dark border-top-0">
+                  <!-- <small>De: R$ 1.290,90</small> -->
+                  <h4 class="card-text">R$ {{ number_format($prod->price,2,",",".") }}</h4>
                </div>
             </div>
          </div>
