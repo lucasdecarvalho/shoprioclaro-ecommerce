@@ -6,7 +6,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/details.css') }}" rel="stylesheet" type="text/css">
+    <!-- <link href="{{ asset('css/details.css') }}" rel="stylesheet" type="text/css"> -->
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
