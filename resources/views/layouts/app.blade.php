@@ -114,12 +114,12 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <div class="col-12 rounded d-md-none">
+                        <div class="col-12 rounded d-md-none mt-3 bg-secondary">
 
-                            <li class="nav-item  border-bottom p-2 m-0">
+                            <li class="nav-item border-bottom p-3">
                                 <a class="nav-link text-light" href="{{ route('client.index') }}"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
                             </li>
-                            <li class="nav-item p-2">
+                            <li class="nav-item p-3">
                                 <a class="nav-link text-light" href="{{ route('cart.index') }}"><i class="fas fa-shopping-cart"></i> Carrinho</a>
                             </li>
                             
