@@ -38,11 +38,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="name">Nome:</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nome" value="{{ Auth::user()->name ?? null }}">
+                                    <input type="text" name="name" class="form-control" id="name" maxlength="65" placeholder="Nome" value="{{ Auth::user()->name ?? null }}">
                                 </div>
                                 <div class="col-6">
                                     <label for="lastname">Sobrenome:</label>
-                                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Sobrenome" value="{{ Auth::user()->lastname ?? null }}">
+                                    <input type="text" name="lastname" class="form-control" id="lastname" maxlength="65" placeholder="Sobrenome" value="{{ Auth::user()->lastname ?? null }}">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group text-right">
-                            <button type="submit" name="" class="btn btn-primary">Alterar dados</button>
+                            <button type="submit" class="btn btn-primary">Alterar dados</button>
                         </div>                        
                     </form>
 
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group text-right">
-                            <button type="submit" name="" class="btn btn-primary">Alterar contatos</button>
+                            <button type="submit" class="btn btn-primary">Alterar contatos</button>
                         </div>
                     </form>
 
@@ -113,7 +113,7 @@
                                 <input type="text" name="zipcode" class="col-8 border rounded-left cep" id="zipcode" placeholder="Digite seu CEP" value="{{ Auth::user()->zipcode ?? null  }}" required>
                                 <input type="hidden" name="number" value=" ">
                                 <input type="hidden" name="comp" value=" ">
-                                <button type="submit" name="" class="col-4 bg-secondary p-2 border-0 text-white rounded-right">Preencher</button>
+                                <button type="submit" class="col-4 bg-secondary p-2 border-0 text-white rounded-right">Preencher</button>
                             </div>
                         </div>
                     </form>    
@@ -131,11 +131,11 @@
                             <div class="row">
                                 <div class="col-9">
                                     <label for="street">Endereço:</label>
-                                    <input type="text" name="street" class="form-control" id="street" placeholder="Logradouro" value="{{ $end['street'] ?? null }}" readonly required>
+                                    <input type="text" name="street" class="form-control" id="street" maxlength="255" placeholder="Logradouro" value="{{ $end['street'] ?? null }}" readonly required>
                                 </div>
                                 <div class="col-3">
                                     <label for="number">Número:</label>
-                                    <input type="text" name="number" class="form-control" id="number" placeholder="Número" value="{{ Auth::user()->number ?? null }}" required>
+                                    <input type="text" name="number" class="form-control" id="number" maxlength="18" placeholder="Número" value="{{ Auth::user()->number ?? null }}" required>
                                 </div>
                             </div>
                         </div>
@@ -144,11 +144,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="comp">Complemento:</label>
-                                    <input type="text" name="comp" class="form-control" id="comp" placeholder="Complemento" value="{{ Auth::user()->comp ?? null }}">
+                                    <input type="text" name="comp" class="form-control" id="comp" maxlength="255" placeholder="Complemento" value="{{ Auth::user()->comp ?? null }}">
                                 </div>
                                 <div class="col-6">
                                     <label for="neigh">Bairro:</label>
-                                    <input type="text" name="neigh" class="form-control" id="neigh" placeholder="Bairro" value="{{ $end['district'] ?? null }}" readonly required>
+                                    <input type="text" name="neigh" class="form-control" id="neigh" maxlength="255" placeholder="Bairro" value="{{ $end['district'] ?? null }}" readonly required>
                                 </div>
                             </div>
                         </div>
@@ -157,18 +157,18 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="city">Cidade:</label>
-                                    <input type="text" name="city" class="form-control" id="city" placeholder="Cidade" value="{{ $end['city'] ?? null }}" readonly required>
+                                    <input type="text" name="city" class="form-control" id="city" maxlength="255" placeholder="Cidade" value="{{ $end['city'] ?? null }}" readonly required>
                                 </div>
                                 <div class="col-6">
                                     <label for="state">Estado:</label>
-                                    <input type="text" name="state" class="form-control" id="state" placeholder="Estado" value="{{ $end['uf'] ?? null }}" readonly required>
-                                    <input type="hidden" name="country" value="Brasil" readonly required>
+                                    <input type="text" name="state" class="form-control" id="state" maxlength="2" placeholder="Estado" value="{{ $end['uf'] ?? null }}" readonly required>
+                                    <input type="hidden" name="country" maxlength="6" value="Brasil" readonly required>
                                 </div>
                             </div>  
                         </div>
 
                         <div class="form-group text-right">
-                            <button type="submit" name="" class="btn btn-primary">Alterar Endereço</button>
+                            <button type="submit" class="btn btn-primary">Alterar Endereço</button>
                         </div>
                     </form>
                     <!-- end form address -->

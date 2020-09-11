@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group col-12 col-xl-6">
                         <label for="trackingNumber">Código de Rastreio:</label>
-                        <input type="text" name="trackingNumber" value="{{ $sale->trackingNumber }}" class="form-control" id="trackingNumber" maxlength="45" placeholder="">
+                        <input type="text" maxlength="18" name="trackingNumber" value="{{ $sale->trackingNumber }}" class="form-control" id="trackingNumber" maxlength="45" placeholder="">
                     </div>
                 </div>
             

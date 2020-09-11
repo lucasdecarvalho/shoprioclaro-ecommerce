@@ -45,7 +45,7 @@
             <div class="col-12 col-xl-6 mt-2 mb-2">
                <form class="w-100 float-left" action="{{ route('checkout.coupon') }}" method="POST">
                   @csrf
-                  <input class="w-100 p-2 border rounded" type="text" name="cod" placeholder="Cupom de desconto" value="@if(!!$shopc->fmt_final) {{ $coupon->cod ?? null }} @endif">
+                  <input class="w-100 p-2 border rounded text-uppercase" type="text" name="cod" maxlength="8" placeholder="Cupom de desconto" value="@if(!!$shopc->fmt_final) {{ $coupon->cod ?? null }} @endif">
                </form>
             </div>
             <!-- valor do total -->
@@ -150,7 +150,7 @@
                         </div>
                         <div class="row">
                            <div class="col-12 mb-2">
-                              <input type="text" name="holder" class="form-control" id="cc-name" placeholder="Nome completo (como impresso no cartão):" required>
+                              <input type="text" name="holder" class="form-control" id="cc-name" maxlength="65" placeholder="Nome completo (como impresso no cartão):" required>
                               <!-- <small class="text-muted"></small> -->
                            </div>
                            <!-- <div class="col-12 mb-2">

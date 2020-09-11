@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <form class="form-inline" action="{{ route('search.word') }}" method="GET">
-                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search" required>
+                            <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." maxlength="255" value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search" required>
                             <button class="btn btn-outline-primary ml-1 w-auto" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
@@ -147,8 +147,8 @@
                                 <form class="form-inline mb-3 w-100 w-md-75" action="{{ route('newsletter.store') }}" method="POST">
                                     @csrf
                                     <div class="form-row">
-                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="name" placeholder="Digite seu Nome" required>
-                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="email" placeholder="Digite seu E-mail" required>
+                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="name" maxlength="65" placeholder="Digite seu Nome" required>
+                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="email" maxlength="65" placeholder="Digite seu E-mail" required>
                                         <button class="btn btn-outline-light mt-1" type="submit">Assinar</button>
                                     </div>
                                 </form>

@@ -35,13 +35,13 @@
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="path">Caminho:</label>
-                            <input type="text" name="path" class="form-control" id="path" required>
+                            <input type="text" maxlength="65" name="path" class="form-control" id="path" required>
                         </div>
                     </div>
                 
                     <div class="form-row">
                         <div class="form-group col-12 text-right">
-                            <input type="hidden" name="tag" value="1">
+                            <input type="hidden" maxlength="1" name="tag" value="1">
                             <a class="btn btn-secondary" href="{{ route('categories.index') }}">Voltar</a>
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>

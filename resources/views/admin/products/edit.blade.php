@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="name">Nome:</label>
-                            <input type="text" name="name" value="{{ $product->name }}" class="form-control" id="name" maxlength="45" required>
+                            <input type="text" maxlength="45" name="name" value="{{ $product->name }}" class="form-control" id="name" required>
                         </div>
                     </div>
                     
@@ -66,11 +66,11 @@
                     <div class="form-row">
                         <div class="form-group col-12 col-xl-6">
                             <label for="price">Preço (R$):</label>
-                            <input type="text" name="price" value="{{ $product->price }}" class="form-control money" id="price" required>
+                            <input type="text" maxlength="9" name="price" value="{{ $product->price }}" class="form-control money" id="price" required>
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="storage">Estoque:</label>
-                            <input type="number" name="storage" value="{{ $product->storage }}" class="form-control" id="storage" required>
+                            <input type="number" maxlength="7" name="storage" value="{{ $product->storage }}" class="form-control" id="storage" required>
                         </div>
                     </div>
 
@@ -78,15 +78,15 @@
                         <div class="form-group col-12 col-xl-6">
                             <label for="promo">Promoção:</label>
                             <select class="form-control" name="promo" id="promo">
-                                <option value=""></option>
+                                <option value="" maxlength="1"></option>
                             </select>
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="status">Status:</label>
                             <select class="form-control" name="status" id="status" required>
-                                <option value="{{ $product->status }}">@if($product->status == true) Publicado @else Escondido @endif</option>
-                                <option value="1">Publicar</option>
-                                <option value="0">Esconder</option>
+                                <option value="{{ $product->status }}" maxlength="1">@if($product->status == true) Publicado @else Escondido @endif</option>
+                                <option value="1" maxlength="1">Publicar</option>
+                                <option value="0" maxlength="1">Esconder</option>
                             </select>
                         </div>
                     </div>

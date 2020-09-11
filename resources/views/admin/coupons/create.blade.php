@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="discount">Desconto (%):</label>
-                            <input type="number" name="discount" class="form-control" id="discount" required>
+                            <input type="number" maxlength="2" name="discount" class="form-control" id="discount" required>
                         </div>
                     </div>
                 

@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="target">Link (opcional):</label>
-                            <input type="text" name="target" class="form-control" id="target" placeholder="exemplo: http://www.site.com.br">
+                            <input type="text" name="target" class="form-control" id="target" maxlength="255" placeholder="exemplo: http://www.site.com.br">
                         </div>
                         <div class="form-group col-12 col-xl-6">
                             <label for="caption">Descrição (opcional):</label>
