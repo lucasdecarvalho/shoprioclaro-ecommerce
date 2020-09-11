@@ -52,7 +52,7 @@
 
                     <!-- Deletar o produto -->
                     <div class="col-4 col-xl-2 text-left text-xl-right">
-                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                        <form action="{{ route('cart.destroy',$item->rowId) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button type="submit" class="btn btn-text mt-1 bg-light"><i class="far fa-trash-alt"></i></button>
@@ -74,7 +74,7 @@
 
                     <!-- Valor do produto -->
                     <div class="col-4 col-xl-2 text-right">
-                        <h6 class="mt-3">R$ {{ number_format($item->model->price * $item->qty, 2, ',','.') }}</h6>
+                        <h6 class="mt-3">R$ @if(!isset($item->model->price)) {{ App\Http\Controllers\CartController::removeProduct($item->rowId) }} @else {{ number_format($item->model->price ?? null * $item->qty, 2, ',','.') }} @endif</h6>
                     </div>
 
                 </div>

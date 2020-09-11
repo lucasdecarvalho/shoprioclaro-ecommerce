@@ -14,6 +14,7 @@ class CartController extends Controller
 
     public function index()
     {
+        // dd(Cart::content());
         $correios = new Client;
         $shop = new Shop;
         $cupom = null;
@@ -147,5 +148,35 @@ class CartController extends Controller
     {
         Cart::remove($id);
         return back()->with('success_message', 'Item removido do carrinho');
+    }
+
+    static function removeProduct($id)
+    {
+        Cart::remove($id);
+        $correios = new Client;
+        $shop = new Shop;
+        $cupom = null;
+        $zipcode = auth()->user()->zipcode ?? null;
+
+        $ship = $correios->freight()
+                        ->origin('13501-140') // endereço da loja
+                        ->destination($zipcode) // endereço da entrega
+                        ->services(Service::SEDEX) // serviços dos correios
+                        ->item(11, 2, 16, .3, Cart::count()) // largura min 11, altura min 2, comprimento min 16, peso min .3 e quantidade
+                        ->calculate();
+
+        $shop->ship       = $ship[0]["price"];
+    
+        $price            = str_replace(',','',Cart::total());
+        $tax              = str_replace(',','',Cart::tax());
+        
+        $shop->price      = str_replace(',','',Cart::subtotal());
+        $shop->fmt_price  = number_format($shop['price'],2,',','.');
+        $shop->fmt_ship   = number_format($shop['ship'],2,',','.');
+        $shop->final      = number_format($shop['price'] + $shop['ship'],2,'','');
+        $shop->fmt_final  = number_format($shop['price'] + $shop['ship'],2,',','.');
+
+        return view('cart',compact('shop'))
+            ->with('success_message','Um dos produtos do seu carrinho não está mais disponível. Por isso, o removemos. Mas você pode seguir com suas compras normalmente. :)');
     }
 }
