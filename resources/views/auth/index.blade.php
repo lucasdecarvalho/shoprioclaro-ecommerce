@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mb-3">
-        <div class="col-12 col-xl-8">
+    <div class="row justify-content-center mt-3 mb-3">
+        <div class="col-12 col-md-8">
             <div class="card">
                 <div class="card-header">Meus dados</div>
 
@@ -176,18 +176,18 @@
             </div>
         </div>
 
-        <div class="col-12 col-xl-4">
+        <div class="col-12 col-md-4">
             <div class="card">
                 <div class="card-header">Meus Pedidos</div>
 
                 <div class="card-body">
                     <div class="row">
                         @foreach($done as $key => $item)
-                            @if($item->status == 'waiting' || $item->status == 'delivered')
+                            @if($item->status == 'waiting' || $item->status == 'posted')
                             <ul class="w-100 p-2 border rounded">
                                 
                                 <li class="">Número do pedido: {{ $item->tid }}</li>
-                                <li>Status: <button class="btn btn-info text-white p-0 pl-1 pr-1">{{ $item->status }}</button></li>
+                                <li>Status: <small class="btn btn-info text-white p-0 pl-1 pr-1">@if($item->status == 'waiting') Aguardando envio @else Postado @endif</small></li>
                                     
                                     <ul class="w-100 p-0 mt-2">
                                     @foreach($item->cart as $prods)
@@ -200,13 +200,13 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-header">Pedidos Entregues</div>
 
                 <div class="card-body">
                     <div class="row">
                         @foreach($done as $key => $item)
-                            @if($item->status == 'done')
+                            @if($item->status == 'delivered')
                             <ul class="w-100 p-2 border rounded">
                                 
                                 <li class="">Número do pedido: {{ $item->tid }}</li>

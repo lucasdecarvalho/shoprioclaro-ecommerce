@@ -30,10 +30,23 @@
                     <div class="form-group col-12 col-xl-6">
                         <label for="status">Status de Entrega:</label>
                         <select class="form-control" name="status" id="status" required>
-                            <option value="{{ $sale->status }}">@if($sale->status == 'waiting') Aguardando envio @elseif($sale->status == 'delivered') Postado @elseif($sale->status == 'done') Entregue @else Error edit.sales 34 @endif</option>
+                            <option value="{{ $sale->status }}">
+                                    @if($sale->status == 'waiting') 
+                                        Aguardando envio 
+                                    @elseif($sale->status == 'posted')
+                                        Postado 
+                                    @elseif($sale->status == 'delivered')
+                                        Entregue 
+                                    @elseif($sale->status == 'canceled') 
+                                        Cancelado
+                                    @else 
+                                        Error edit.sales 34 
+                                    @endif
+                                </option>
                                 <option value="waiting">Aguardando envio</option>
-                                <option value="delivered">Postado</option>
-                                <option value="done">Entregue</option>
+                                <option value="posted">Postado</option>
+                                <option value="delivered">Entregue</option>
+                                <option value="canceled">Cancelado</option>
                         </select>
                     </div>
                     <div class="form-group col-12 col-xl-6">
@@ -44,7 +57,7 @@
             
                 <div class="form-row">
                     <div class="form-group col-12 text-right">
-                        <a href="/admin/sales" class="btn btn-secondary">Voltar</a>
+                        <a href="{{ route('sales.index') }}" class="btn btn-secondary">Voltar</a>
                         <button type="submit" class="btn btn-primary">Alterar</button>
                     </div>
                 </div>

@@ -34,7 +34,19 @@
                     @if($item->success == true) Aprovada
                     @else Reprovada @endif</td>
                     <td>{{ $item->tid }}</td>
-                    <td>@if($item->status == 'waiting') Aguardando envio @elseif($item->status == 'delivered') Postado @elseif($item->status == 'done') Entregue @else Error edit.sales 34 @endif</td>
+                    <td>
+                        @if($item->status == 'waiting') 
+                            Aguardando envio 
+                        @elseif($item->status == 'posted')
+                            Postado 
+                        @elseif($item->status == 'delivered')
+                            Entregue 
+                        @elseif($item->status == 'canceled') 
+                            Cancelado
+                        @else 
+                            Error edit.sales 34 
+                        @endif
+                    </td>
                     <td>{{ $user->name }} {{ $user->lastname }} (CPF: {{ $user->doc }})</td>
                     <td>
                         <a class="btn btn-info" href="{{ route('sales.show',$item->id) }}" data-toggle="tooltip" data-placement="top" title="Detalhes"><i class="fas fa-search-plus"></i></a>
