@@ -117,7 +117,7 @@
                         <div class="col-12 rounded d-md-none">
 
                             <li class="nav-item  border-bottom p-2 m-0">
-                                <a class="nav-link text-light" href="/client"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
+                                <a class="nav-link text-light" href="{{ route('client.index') }}"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
                             </li>
                             <li class="nav-item p-2">
                                 <a class="nav-link text-light" href="{{ route('cart.index') }}"><i class="fas fa-shopping-cart"></i> Carrinho</a>
