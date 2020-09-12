@@ -122,12 +122,10 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <a href="">
-                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-                  </a>
+                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
                   <div class="card-body">
-                     <h5 class="card-title">Assine nossa Newsletter</h5>
-                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <h4 class="card-title">Newsletter</h4>
+                     <p class="card-text">Receba um e-mail semanal com todas as nossas novidades.</p>
                      <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fas fa-envelope-open-text"></i> Assinar</button>
                   </div>
                </div>
@@ -135,12 +133,10 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <a href="">
-                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-                  </a>
+                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
                   <div class="card-body">
-                     <h5 class="card-title">Siga-nos nas Redes!</h5>
-                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <h4 class="card-title">Sig@-nos!</h4>
+                     <p class="card-text">Curta, comente e compartilhe! Postagens diárias nas redes sociais.</p>
                      <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-instagram"></i></button>
                      <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-facebook-square"></i></button>
                      <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-twitter"></i></button>
@@ -151,12 +147,10 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <a href="">
-                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-                  </a>
+                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
                   <div class="d-hover card-body">
-                     <h5 class="card-title">Blog Sua Empresa</h5>
-                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <h4 class="card-title">Blog Sua Empresa</h4>
+                     <p class="card-text">Acompanhe e participe do nosso conteúdo no blog <strong>Sua empresa</strong>.</p>
                      <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fas fa-external-link-alt"></i> Acessar</button>
                   </div>
                </div>
