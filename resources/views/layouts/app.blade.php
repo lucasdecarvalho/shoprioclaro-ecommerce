@@ -139,98 +139,45 @@
         
         <!-- Footer -->
         <div class="footer-head bg-secondary text-light">
-            <div class="col-12">
-                <div class="container pt-4 pb-4">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="row">
-                                <form class="form-inline mb-3 w-100 w-md-75" action="{{ route('newsletter.store') }}" method="POST">
-                                    @csrf
-                                    <div class="form-row">
-                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="name" maxlength="65" placeholder="Digite seu Nome" required>
-                                        <input class="form-control mt-1 mr-1 border-light" type="text" name="email" maxlength="65" placeholder="Digite seu E-mail" required>
-                                        <button class="btn btn-outline-light mt-1" type="submit">Assinar</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="row">
-                                <span>Inscreva-se em nossa newsletter e receba mensagens periodicamente sobre promoções, novidades e destaques de nossa loja.</span>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <ul class="navbar nav mt-3">
-                                <li class="nav-item m-2">
-                                    <a class="text-secondary text-light" href="https://www.instagram.com/" target="_blank">
-                                        <i style="font-size:2em;" class="fab fa-instagram"></i>
-                                    </a>
+            <div class="container pt-4 pb-4"></div>
+        </div>
+        <footer class="bg-dark text-light">
+            <div class="container pt-4 pb-4">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <h4>Lorem Ipsum</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante.</p>
+                    </div>
+                    <div class="col-12 col-md-5 p-0">
+                        <div class="navbar">
+                            <ul class="p-2 border-left">
+                                <li>
+                                    <a class="text-light" href="">Contato</a>
                                 </li>
-                                <li class="nav-item m-2">
-                                    <a class="text-secondary text-light" href="https://www.facebook.com/" target="_blank">
-                                        <i style="font-size:2em;" class="fab fa-facebook-square"></i>
-                                    </a>
+                                <li>
+                                    <a class="text-light" href="">FAQ</a>
                                 </li>
-                                <li class="nav-item m-2">
-                                    <a class="text-secondary text-light" href="https://www.twitter.com/" target="_blank">
-                                        <i style="font-size:2em;" class="fab fa-twitter"></i>
-                                    </a>
+                                <li>
+                                    <a class="text-light" href="">Meus Pedidos</a>
                                 </li>
-                                <li class="nav-item m-2">
-                                    <a class="text-secondary text-light" href="https://www.youtube.com/" target="_blank">
-                                        <i style="font-size:2em;" class="fab fa-youtube"></i>
-                                    </a>
+                            </ul>
+                            <ul class="p-2 border-left">
+                                <li>
+                                    <a class="text-light" href="">Política de devolução</a>
+                                </li>
+                                <li>
+                                    <a class="text-light" href="">Privacidade</a>
+                                </li>
+                                <li>
+                                    <a class="text-light" href="">Termos de uso</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer class="bg-dark text-light">
-            <div class="col-12">
-                <div class="container pt-4 pb-4">
-                    <div class="row">
-                        <div class="col-12 col-md-8">
-                            <div class="row">
-                                <h4>Lorem Ipsum</h4>
-                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta purus lectus, sit amet placerat libero porta at. Vivamus tincidunt, ex in porttitor ornare, libero dolor bibendum ante, ac condimentum metus eros ac risus. In ac ornare dolor. Nam accumsan semper consequat.</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="nav navbar p-0 m-0">
-                                <ul class="col-12 col-md-6 p-0">
-                                    <li>
-                                        <a class="text-light" href="">Contato</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-light" href="">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-light" href="">Meus Pedidos</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-light" href="">Política de retorno</a>
-                                    </li>
-                                </ul>
-                                <ul class="col-12 col-md-6 p-0">
-                                    <li>
-                                        <a class="text-light" href="">Informações de compra</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-light" href="">Privacidade</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-light" href="">Termos de uso</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 pt-4 text-center" style="border-top: solid 1px rgba(3, 3, 3, .3);">
-                            <p class="p-0 m-0">© 2020 Shop Rio Claro. Todos os direitos reservados.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-12 pt-4 pb-4 text-center" style="border-top: solid 1px rgba(3, 3, 3, .3);">
+                <p class="p-0 m-0">© 2020 Shop Rio Claro. <br> Todos os direitos reservados.</p>
             </div>
         </footer>
         <!-- Footer end -->

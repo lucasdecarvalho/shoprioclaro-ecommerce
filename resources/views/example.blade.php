@@ -73,7 +73,7 @@
 
       <!-- Slider -->
       @if(!!$fbb)
-      <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls2" class="carousel slide rounded" data-ride="carousel">
          <div class="carousel-inner">
             <div class="carousel-item active">
                @if(!empty($fbb->target)) <a href="{{ $fbb->target }}"> @endif
@@ -114,52 +114,55 @@
          </a>
       </div>
       @endif
-      <!-- Slider end -->
-   <!-- Container -->
    </div>
 
    <div class="container">
-      <div class="card-deck">
+      <div class="card-group mb-3">
+         <div class="row pl-2 pr-2">
 
-      <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
-         <div class="card border-0 p-0">
-            <a href="details">
-            <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-            </a>
-            <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Cadastre-se</button>
+            <div class="col-12 col-md-4 pl-2 pr-2">
+               <div class="card text-center p-0">
+                  <a href="">
+                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
+                  </a>
+                  <div class="card-body">
+                     <h5 class="card-title">Assine nossa Newsletter</h5>
+                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fas fa-envelope-open-text"></i> Assinar</button>
+                  </div>
+               </div>
             </div>
-         </div>
-         </div>
 
-         <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
-         <div class="card border-0 p-0">
-            <a href="details">
-            <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-            </a>
-            <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">Saiba mais</button>
+            <div class="col-12 col-md-4 pl-2 pr-2">
+               <div class="card text-center p-0">
+                  <a href="">
+                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
+                  </a>
+                  <div class="card-body">
+                     <h5 class="card-title">Siga-nos nas Redes!</h5>
+                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-instagram"></i></button>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-facebook-square"></i></button>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-twitter"></i></button>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fab fa-youtube"></i></button>
+                  </div>
+               </div>
             </div>
-         </div>
-         </div>
 
-         <div class="col-12 col-md-4 m-0 p-0 rounded-0 mx-0">
-         <div class="card border-0 p-0">
-            <a href="details">
-            <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
-            </a>
-            <div class="d-hover card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit">SAIBA MAIS</button>
+            <div class="col-12 col-md-4 pl-2 pr-2">
+               <div class="card text-center p-0">
+                  <a href="">
+                     <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
+                  </a>
+                  <div class="d-hover card-body">
+                     <h5 class="card-title">Blog Sua Empresa</h5>
+                     <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+                     <button class="btn btn-outline-dark my-2 my-sm-0 text-uppercase" type="submit"><i class="fas fa-external-link-alt"></i> Acessar</button>
+                  </div>
+               </div>
             </div>
-         </div>
-         </div>
 
+         </div>
       </div>
    </div>
    <!-- Content end -->
