@@ -19,7 +19,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        a,p,span,small,h2,h3,h5,h6,li {
+        a,p,span,small,h2,h5,h6,li {
             font-family: 'Open Sans', cursive;
         }
         a {
@@ -36,6 +36,8 @@
         h1 {
             font-family: 'Anton', cursive;
             font-size:42px;
+            line-height:0;
+            margin-top:.2em;
         }
         h5 {
             font-size:16px;
@@ -43,6 +45,12 @@
         h4 {
             font-family: 'Anton', cursive;
             font-size:22px;
+        }
+        h3 {
+            font-family: 'Anton', cursive;
+            font-size:26px;
+            line-height:0;
+            margin-top:.75em;
         }
         .slide {
             overflow:hidden;
@@ -68,29 +76,29 @@
 
             <nav class="navbar">
                 <div class="container">
-                    <div class="col-12 col-md-4 text-center text-md-left">
+                    <div class="col-12 col-md-4 d-none d-md-block text-center text-md-left">
                         <a href="{{ route('index') }}">
                             <h1 class="text-primary">Sua Marca</h1>
                         </a>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-9 col-md-4 p-0">
                         <form class="form-inline" action="{{ route('search.word') }}" method="GET">
                             <input type="search" name="keyword" class="form-control border-primary w-75" placeholder="Buscar por produtos..." maxlength="255" value="@if(isset($keyword)) {{$keyword}} @endif" aria-label="Search" required>
                             <button class="btn btn-outline-primary ml-1 w-auto" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <div class="col-12 col-md-4 d-none d-md-block">
+                    <div class="col-3 col-md-4">
                         <ul class="nav">
-                            <li class="nav-item">
+                            <li class="nav-item d-none d-md-block">
                                 <a class="nav-link text-dark" href="{{ route('client.index') }}">
                                     <i style="font-size:18px;" class="fas fa-user text-dark mr-1"></i>
                                     @if (Auth::check()) {{ "Olá, ". Auth::user()->name ." ". Auth::user()->lastname }}. @else Login / Registro @endif
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a style="position:absolute;right:0;" class="nav-link text-dark" href="{{ route('cart.index') }}">
-                                    <i style="font-size:34px;line-height:1em;" class="fas fa-shopping-cart mr-2 text-dark"></i>
-                                    <span style="position:absolute;top:.2em;right:.5em;" class="rounded-circle pr-2 pl-2 bg-danger text-white">{{ Cart::count() }}</span>
+                                <a class="nav-link text-dark" href="{{ route('cart.index') }}">
+                                    <i style="position:absolute;top:-2px;right:.5em;font-size:34px;line-height:1em;" class="fas fa-shopping-cart mr-2 text-dark"></i>
+                                    <span style="position:absolute;top:-.5em;right:.5em;" class="rounded-circle pr-2 pl-2 bg-danger text-white">{{ Cart::count() }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -105,7 +113,12 @@
                 <!-- responsivo -->
                 <div class="col-12 d-block d-md-none">
                     <div class="row">
-                        <div class="col-12 text-right">
+                        <div class="col-7 text-left">
+                            <a href="{{ route('index') }}">
+                                <h3 class="text-white">Sua Marca</h3>
+                            </a>
+                        </div>
+                        <div class="col-5 text-right">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -116,11 +129,8 @@
                     <ul class="navbar-nav">
                         <div class="col-12 rounded d-md-none mt-3 bg-secondary">
 
-                            <li class="nav-item border-bottom p-3">
+                            <li class="nav-item p-2">
                                 <a class="nav-link text-light" href="{{ route('client.index') }}"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
-                            </li>
-                            <li class="nav-item p-3">
-                                <a class="nav-link text-light" href="{{ route('cart.index') }}"><i class="fas fa-shopping-cart"></i> Carrinho</a>
                             </li>
                             
                         </div>
