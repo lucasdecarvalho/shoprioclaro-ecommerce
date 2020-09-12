@@ -44,28 +44,27 @@
    <!-- Container -->
    <div class="container">
 
-      <div class="card-group mt-4 mb-4">
-         <div class="row">
-            <h4 class="w-100 m-2 text-center">Produtos Relacionados</h4>
+      <div class="card-group mt-4 mb-3">
+      <h4 class="w-100 text-center">Produtos Relacionados</h4>
+      <div class="row">
 
-               @foreach ($related as $prod)
+            @foreach ($related as $prod)
 
-               <div class="col-6 col-md-3">
-                  <div class="card text-center p-0 rounded-0">
-                     <a href="{{ route('shop.show',[$prod->category,$prod->id]) }}">
-                        <img class="card-img-top p-1 bg-white" style="width:100%;height:auto;margin: 0 auto;" src="{{ asset($prod->image1 ?? 'images/no-image.png') }}" alt="{{ $prod->name ?? null }}">
-                     </a>
-                     <div class="card-body bg-white" style="min-height:130px;">
-                        <h5 class="card-title font-weight-bold">{{ $prod->name ?? null }}</h5>
-                     </div>
-                     <div class="card-footer text-dark border-top-0">
-                        <!-- <small>De: R$ 1.290,90</small> -->
-                        <h4 class="card-text">R$ {{ number_format($prod->price,2,",",".") }}</h4>
-                     </div>
+            <div class="col-6 col-md-3">
+               <div class="card text-center p-0">
+                  <a href="{{ route('shop.show',[$prod->category,$product->id]) }}">
+                     <img class="card-img-top w-100 mx-auto" src="{{ asset($prod->image1 ?? 'images/no-image.png') }}" alt="{{ $prod->name ?? null }}">
+                  </a>
+                  <div class="card-body overflow-hidden" style="height:90px;">
+                     <p class="card-title">{{ $prod->name ?? null }}</p>
+                  </div>
+                  <div class="card-footer">
+                     <h4 class="card-text">R$ {{ number_format($prod->price,2,",",".") }}</h4>
                   </div>
                </div>
-               
-               @endforeach
+            </div>
+            
+            @endforeach
 
          </div>
       </div>
