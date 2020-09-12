@@ -122,7 +122,6 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
                   <div class="card-body">
                      <h4 class="card-title">Newsletter</h4>
                      <p class="card-text">Receba um e-mail semanal com todas as nossas novidades.</p>
@@ -133,7 +132,6 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
                   <div class="card-body">
                      <h4 class="card-title">Sig@-nos!</h4>
                      <p class="card-text">Curta, comente e compartilhe! Postagens diárias nas redes sociais.</p>
@@ -147,7 +145,7 @@
 
             <div class="col-12 col-md-4 pl-2 pr-2">
                <div class="card text-center p-0">
-                  <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap">
+                  <!-- <img class="card-img-top" src="{{ asset('images/202009082036071.jpg') }}" alt="Card image cap"> -->
                   <div class="d-hover card-body">
                      <h4 class="card-title">Blog Sua Empresa</h4>
                      <p class="card-text">Acompanhe e participe do nosso conteúdo no blog <strong>Sua empresa</strong>.</p>

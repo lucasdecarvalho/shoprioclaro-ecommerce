@@ -105,44 +105,40 @@
                     </div>
                 </div>
             </nav>
+        </header>
 
-
-
-            <!-- top menu -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark pt-2 pb-2 p-md-0">
-                <!-- responsivo -->
-                <div class="col-12 d-block d-md-none">
-                    <div class="row">
-                        <div class="col-7 text-left">
-                            <a href="{{ route('index') }}">
-                                <h3 class="text-white">Sua Marca</h3>
-                            </a>
-                        </div>
-                        <div class="col-5 text-right">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
+        <!-- top menu -->
+        <nav class="nav sticky-top navbar-expand-md navbar-dark bg-dark pt-2 pb-2 p-md-0">
+            <!-- responsivo -->
+            <div class="col-12 d-block d-md-none">
+                <div class="row">
+                    <div class="col-7 text-left">
+                        <a href="{{ route('index') }}">
+                            <h3 class="text-white">Sua Marca</h3>
+                        </a>
+                    </div>
+                    <div class="col-5 text-right">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
                 </div>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                    <ul class="navbar-nav">
-                        <div class="col-12 rounded d-md-none mt-3 bg-secondary">
-
-                            <li class="nav-item p-2">
-                                <a class="nav-link text-light" href="{{ route('client.index') }}"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
-                            </li>
-                            
-                        </div>
-                        @foreach($categories as $catg)
-                        <li id="menu" class="p-2 m-0">
-                            <a class="nav-item nav-link text-white text-uppercase" href="{{ route('shop.index',$catg->path ?? null) }}">{{ $catg->title }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </nav>
-        </header>
+            </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <ul class="navbar-nav rounded d-md-none mt-3 m-2 bg-secondary">
+                    <li class="nav-item p-3">
+                        <a class="nav-link text-light" href="{{ route('client.index') }}"><i class="fas fa-user"></i> @if (Auth::check()) {{ "Olá, ". Auth::user()->name }} @else Login / Registro @endif</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    @foreach($categories as $catg)
+                    <li id="menu" class="nav-item p-3">
+                        <a class="nav-link text-white text-uppercase" href="{{ route('shop.index',$catg->path ?? null) }}">{{ $catg->title }}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </nav>
         <!-- header end -->
 
         @yield('content')
