@@ -6,11 +6,11 @@
 
       <div class="card-group mt-4 mb-3">
          <h4 class="w-100 text-center">Palavra-chave: {{ $keyword }}</h4>
-         <div class="row">
+         <div class="row pl-2 pr-2">
 
                @foreach ($result as $res)
 
-               <div class="col-6 col-md-3">
+               <div class="col-6 col-md-3 pl-2 pr-2">
                   <div class="card text-center p-0">
                      <a href="{{ route('shop.show',[$res->category,$res->id]) }}">
                         <img class="card-img-top w-100 mx-auto" src="{{ asset($res->image1 ?? 'images/no-image.png') }}" alt="{{ $res->name ?? null }}">

@@ -48,11 +48,11 @@
 
       <div class="card-group mt-4 mb-3">
          <h4 class="w-100 text-center">DESTAQUES</h4>
-         <div class="row">
+         <div class="row pl-2 pr-2">
 
                @foreach ($pr as $product)
 
-               <div class="col-6 col-md-3">
+               <div class="col-6 col-md-3 pl-2 pr-2">
                   <div class="card text-center p-0">
                      <a href="{{ route('shop.show',[$product->category,$product->id]) }}">
                         <img class="card-img-top w-100 mx-auto" src="{{ asset($product->image1 ?? 'images/no-image.png') }}" alt="{{ $product->name ?? null }}">
