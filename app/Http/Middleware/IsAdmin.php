@@ -22,7 +22,7 @@ class IsAdmin
         }
         else
         {
-            return redirect('/exemplo/login');
+            return redirect('/login');
         }
         
     }
