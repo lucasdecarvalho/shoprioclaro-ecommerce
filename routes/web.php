@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'exemplo'], function() {
+// Route::group(['prefix' => 'exemplo'], function() {
 
     // Main
     Route::get('/', 'IndexController@index')->name('index');
@@ -67,4 +67,4 @@ Route::group(['prefix' => 'exemplo'], function() {
     Route::get('/home', 'HomeController@index')->name('client.index');
     Route::get('/logout', 'Auth\LoginController@logout');
 
-});
+// });

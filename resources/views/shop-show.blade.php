@@ -21,10 +21,31 @@
                   
                </div>
                <div class="details col-md-6 text-center text-xl-left">
-                  <h3 class="product-title">{{ $product->name ?? null }}</h3>
-                  <p class="product-description" style="text-align:justify !important;">{{ $product->caption ?? null }} {{ $product->details ?? null }}</p>
-                  <h4 class="price">R$ {{ number_format($product->price,2,",",".") }}</h4>
+                  <h4 class="product-title">{{ $product->name ?? null }}</h4>
+                  
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                     <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Especificações</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Descrição</a>
+                     </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                     </div>
+                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     </div>
+                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <p class="product-description" style="text-align:justify !important;">{{ $product->caption ?? null }} {{ $product->details ?? null }}</p>
+                     </div>
+                  </div>
+
                   <div class="col-12 col-xl-6 p-0">
+                     <h4 class="price">R$ {{ number_format($product->price,2,",",".") }}</h4>
                      <form action="{{ route('cart.store') }}" method="POST">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $product->id }}">
